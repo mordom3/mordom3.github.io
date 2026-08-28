@@ -6,14 +6,22 @@
     <title>Domenico Morelli | Technical Service, Data & Financial Systems</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
+            --bg-color: #0a0e17;
             --card-bg: #111827;
-            --card-border: #1f2937;
-            --text-main: #f3f4f6;
+            --card-border: #1f293d;
+            --card-hover: #2d3e58;
+            --text-main: #f9fafb;
             --text-muted: #9ca3af;
+            
+            /* Accent Colors */
+            --accent-green: #10b981;
+            --accent-green-glow: rgba(16, 185, 129, 0.15);
             --accent-bitcoin: #f7931a;
-            --accent-data: #38bdf8;
-            --accent-dark: #1e293b;
+            --accent-bitcoin-glow: rgba(247, 147, 26, 0.15);
+            --accent-blue: #38bdf8;
+            --accent-blue-glow: rgba(56, 189, 248, 0.15);
+            --accent-yellow: #f59e0b;
+            
             --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -32,8 +40,8 @@
         }
 
         header {
-            background-color: rgba(17, 24, 39, 0.9);
-            backdrop-filter: blur(10px);
+            background-color: rgba(11, 16, 27, 0.85);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -41,7 +49,7 @@
         }
 
         nav {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -50,13 +58,14 @@
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 800;
             color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
@@ -66,145 +75,218 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.75rem;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
+            font-weight: 500;
             transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--accent-data);
+            color: var(--accent-green);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 2rem;
         }
 
         /* Hero Section */
         .hero {
-            padding: 4rem 0 3rem;
+            padding: 3.5rem 0 2rem;
             display: grid;
-            grid-template-columns: 1fr 260px;
-            gap: 2.5rem;
+            grid-template-columns: 1fr 280px;
+            gap: 3rem;
             align-items: center;
+        }
+
+        .hero-greeting {
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            background: var(--accent-green-glow);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-bottom: 1rem;
         }
 
         .hero h1 {
             font-size: 2.8rem;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #ffffff, #9ca3af);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, #9ca3af 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p.subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-data);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
         }
 
         .hero p.description {
             color: var(--text-muted);
             font-size: 1.05rem;
-            max-width: 800px;
             margin-bottom: 2rem;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
+            max-width: 780px;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 260px;
+            max-width: 280px;
             height: auto;
-            border-radius: 12px;
-            border: 2px solid var(--card-border);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            border: 2px solid var(--accent-green);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
             object-fit: cover;
         }
 
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+        /* Stats Bar (Stile Mannino Maker) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin: 2.5rem 0 1rem;
         }
 
-        .badge {
+        .stat-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--text-main);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
             display: flex;
             align-items: center;
-            gap: 6px;
-        }
-
-        .badge.btc {
-            border-color: rgba(247, 147, 26, 0.4);
-            color: var(--accent-bitcoin);
-        }
-
-        .badge.data {
-            border-color: rgba(56, 189, 248, 0.4);
-            color: var(--accent-data);
-        }
-
-        /* Section Styling */
-        section {
-            margin-top: 4rem;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 0.75rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 1.75rem;
+            gap: 1.25rem;
             transition: transform 0.2s, border-color 0.2s;
         }
 
-        .card:hover {
-            border-color: #374151;
+        .stat-card:hover {
+            border-color: var(--accent-green);
             transform: translateY(-2px);
         }
 
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .stat-icon.green { background: var(--accent-green-glow); color: var(--accent-green); }
+        .stat-icon.btc { background: var(--accent-bitcoin-glow); color: var(--accent-bitcoin); }
+        .stat-icon.blue { background: var(--accent-blue-glow); color: var(--accent-blue); }
+
+        .stat-info strong {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--text-main);
+        }
+
+        .stat-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Header */
+        section {
+            margin-top: 4.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.85rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--card-border), transparent);
+        }
+
+        /* Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--card-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header-icon {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .card-header-icon .icon-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.3;
         }
 
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         .card-tags {
@@ -212,49 +294,60 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: auto;
+            padding-top: 1rem;
         }
 
         .tag {
-            font-size: 0.75rem;
-            background: var(--accent-dark);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
             color: var(--text-muted);
         }
+
+        .tag.green { color: var(--accent-green); border-color: rgba(16, 185, 129, 0.3); }
+        .tag.btc { color: var(--accent-bitcoin); border-color: rgba(247, 147, 26, 0.3); }
+        .tag.blue { color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.3); }
 
         /* Timeline / Experience */
         .timeline {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.75rem;
         }
 
         .timeline-item {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 1.75rem;
-            border-left: 4px solid var(--accent-data);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-green);
+            transition: border-color 0.2s;
+        }
+
+        .timeline-item.btc-border {
+            border-left-color: var(--accent-bitcoin);
         }
 
         .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
         .company {
-            font-weight: 700;
-            color: var(--accent-data);
-            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            font-size: 1.2rem;
         }
 
+        .company.btc { color: var(--accent-bitcoin); }
+
         .role-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            margin-top: 0.2rem;
         }
 
         .timeline-list {
@@ -265,50 +358,60 @@
 
         .timeline-list li {
             position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
+            padding-left: 1.35rem;
+            margin-bottom: 0.65rem;
         }
 
         .timeline-list li::before {
-            content: "•";
+            content: "▹";
             position: absolute;
             left: 0;
-            color: var(--accent-data);
+            color: var(--accent-green);
+            font-weight: bold;
         }
 
-        /* Links & Buttons */
+        .timeline-item.btc-border .timeline-list li::before {
+            color: var(--accent-bitcoin);
+        }
+
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
             border: 1px solid var(--card-border);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.2s;
         }
 
         .btn:hover {
-            background: var(--card-border);
-            color: #fff;
+            background: var(--accent-green);
+            color: #000;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
         }
 
         .btn-btc {
-            border-color: rgba(247, 147, 26, 0.5);
+            border-color: rgba(247, 147, 26, 0.4);
             color: var(--accent-bitcoin);
         }
 
         .btn-btc:hover {
-            background: rgba(247, 147, 26, 0.1);
+            background: var(--accent-bitcoin);
+            color: #000;
+            border-color: var(--accent-bitcoin);
+            box-shadow: 0 0 15px rgba(247, 147, 26, 0.4);
         }
 
         /* Footer */
         footer {
-            margin-top: 5rem;
+            margin-top: 6rem;
             border-top: 1px solid var(--card-border);
             padding-top: 2rem;
             text-align: center;
@@ -316,14 +419,17 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 868px) {
             .hero {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
             .hero-image {
                 order: -1;
+                display: flex;
+                justify-content: center;
             }
-            .hero h1 { font-size: 2.1rem; }
+            .hero h1 { font-size: 2.2rem; }
             nav { padding: 1rem; }
             nav ul { gap: 1rem; }
         }
@@ -346,114 +452,186 @@
 
     <main class="container">
 
-        <!-- HERO SECTION CON FOTO -->
+        <!-- HERO SECTION -->
         <section class="hero" id="profilo">
             <div>
-                <h1>Domenico Morelli</h1>
-                <p class="subtitle">Technical Service & Logistics | Data & Financial Systems | Bitcoin Protocol Research</p>
+                <span class="hero-greeting">Ciao, sono Domenico Morelli</span>
+                <h1>Technical Service, Data Systems & Bitcoin Research</h1>
+                <p class="subtitle">Sviluppo soluzioni reali unendo automazione, dati e sicurezza informatica.</p>
                 <p class="description">
-                    Spazio professionale integrato in cui si uniscono esperienza sul campo nell'automazione e robotica industriale, gestione della sicurezza e custodia documentale aziendale, analisi finanziaria strutturata e ricerca tecnica approfondita sul protocollo Bitcoin.
+                    Unisco oltre un decennio di esperienza operativa nell'automazione e robotica industriale (Service, Spare Parts e RLS) con l'ingegnerizzazione di modelli di calcolo finanziari e la ricerca tecnica avanzata sul protocollo Bitcoin.
                 </p>
-                <div class="badges">
-                    <span class="badge">⚙️ Technical Service & Logistics</span>
-                    <span class="badge">🛡️ RLS Aziendale (10+ Anni)</span>
-                    <span class="badge data">📊 Financial Data Analysis</span>
-                    <span class="badge btc">₿ Bitcoin Native Research</span>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#progetti" class="btn">Scopri i Progetti ➔</a>
+                    <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Substack Research ↗</a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Se il nome della foto che carichi è diverso (es. profile.png o foto.jpg), cambialo qui sotto -->
                 <img src="profile.jpg" alt="Domenico Morelli">
             </div>
         </section>
 
-        <!-- COMPETENZE -->
+        <!-- STATS / FACTS BAR -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">⚙️</div>
+                <div class="stat-info">
+                    <strong>10+ Anni</strong>
+                    <span>Automazione & Service</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">📊</div>
+                <div class="stat-info">
+                    <strong>Multi-Asset</strong>
+                    <span>Data Engines & Financials</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon btc">₿</div>
+                <div class="stat-info">
+                    <strong>Bitcoin Research</strong>
+                    <span>Protocol & Architecture</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">🛡️</div>
+                <div class="stat-info">
+                    <strong>RLS & Compliance</strong>
+                    <span>Archivio Digitale Sicurezza</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPETENZE (Layout Uniforme a Griglia) -->
         <section id="competenze">
-            <h2 class="section-title">Aree di Competenza</h2>
-            <div class="grid-2">
+            <h2 class="section-title">Competenze Tecniche</h2>
+            <div class="grid-3">
                 
                 <div class="card">
-                    <h3>⚙️ Automazione & Robotica Industriale</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">⚙️</div>
+                        <h3>Automazione & Robotica</h3>
+                    </div>
                     <p>
-                        Realizzazione, collaudo, installazione e messa in servizio di impianti industriali e isole robotizzate. Coordinamento del supporto e assistenza post-vendita per garantire continuità operativa.
+                        Realizzazione, collaudo, installazione e messa in servizio di impianti industriali e isole robotizzate. Assistenza post-vendita avanzata e coordinamento dei tecnici sul campo.
                     </p>
                     <div class="card-tags">
-                        <span class="tag">Isole Robotizzate</span>
-                        <span class="tag">Post-Vendita</span>
-                        <span class="tag">Collaudo & Installazione</span>
+                        <span class="tag blue">Isole Robotizzate</span>
+                        <span class="tag blue">Post-Vendita</span>
+                        <span class="tag blue">Collaudo Impianti</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>📦 Logistics, Spare Parts & Contabilità Operativa</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📦</div>
+                        <h3>Spare Parts & Logistica</h3>
+                    </div>
                     <p>
-                        Gestione dei ricambi (Spare Parts Area Manager) e coordinamento logistico avanzato. Gestione contabile diretta di reparto con emissione dei Documenti di Trasporto (DDT) integrata con la fatturazione amministrativa.
+                        Spare Parts Area Manager con gestione completa del magazzino ricambi e logistica operativa. Gestione contabile diretta di reparto con predisposizione dei DDT per la fatturazione.
                     </p>
                     <div class="card-tags">
-                        <span class="tag">Spare Parts Area Manager</span>
-                        <span class="tag">Gestione DDT</span>
-                        <span class="tag">Contabilità Reparto</span>
+                        <span class="tag blue">Spare Parts Area Manager</span>
+                        <span class="tag blue">Gestione DDT</span>
+                        <span class="tag blue">Contabilità Reparto</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>🛡️ Sicurezza Aziendale (RLS) & Documentazione</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">🛡️</div>
+                        <h3>RLS & Archivio Digitale</h3>
+                    </div>
                     <p>
-                        Rappresentante dei Lavoratori per la Sicurezza (RLS) da oltre 10 anni. Gestione rigorosa, archiviazione e custodia digitale del corpus documentale aziendale (DVR, corsi di formazione, valutazione rischi e audit).
+                        Rappresentante dei Lavoratori per la Sicurezza (RLS) da oltre 10 anni. Gestione, digitalizzazione e custodia dell'intero corpus documentale (DVR, formazione, valutazioni rischi e audit).
                     </p>
                     <div class="card-tags">
-                        <span class="tag">RLS (10+ Anni)</span>
-                        <span class="tag">Archivio Digitale</span>
-                        <span class="tag">DVR & Normative</span>
+                        <span class="tag green">RLS (10+ Anni)</span>
+                        <span class="tag green">Archivio Digitale</span>
+                        <span class="tag green">DVR & Normative</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>📊 Data Analysis & Financial Modeling</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📊</div>
+                        <h3>Data & Financial Engineering</h3>
+                    </div>
                     <p>
-                        Progettazione e ingegnerizzazione di modelli di calcolo complessi per dati finanziari. Elaborazione e gestione flussi tramite fogli di calcolo avanzati e script Python per automazione ed ETL.
+                        Progettazione di modelli di calcolo relazionali per il tracciamento finanziario. Ingegnerizzazione di pipeline dati in Python (yfinance, openpyxl), analisi di bilancio e dashboard web.
                     </p>
                     <div class="card-tags">
-                        <span class="tag">Advanced Calc/Spreadsheets</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">ETL & Data Pipelines</span>
+                        <span class="tag green">Python (ETL)</span>
+                        <span class="tag green">Advanced Spreadsheets</span>
+                        <span class="tag green">HTML/CSS/JS Dashboards</span>
                     </div>
                 </div>
 
-                <div class="card" style="grid-column: 1 / -1;">
-                    <h3>₿ Bitcoin Protocol Research</h3>
+                <div class="card">
+                    <div class="card-header-icon">
+                        <div class="icon-badge">₿</div>
+                        <h3>Bitcoin Protocol Architecture</h3>
+                    </div>
                     <p>
-                        Attività di ricerca e divulgazione orientata esclusivamente al protocollo Bitcoin (nessuna crypto o shitcoin). Analisi approfondita di standard BIP32/BIP39, sicurezza dei master public key (zpub/xpub), gestione UTXO e fee market.
+                        Studio approfondito del protocollo Bitcoin: entropia sorgente, funzioni d'hash (SHA-256, RIPEMD-160), derivazioni gerarchiche BIP32/BIP39 (hardened e non-hardened), zpub/xpub e UTXO management.
                     </p>
                     <div class="card-tags">
-                        <span class="tag">BIP32 / BIP39</span>
-                        <span class="tag">UTXO Management</span>
-                        <span class="tag">zpub Vulnerability Analysis</span>
-                        <span class="tag">Substack Author</span>
+                        <span class="tag btc">BIP32 / BIP39</span>
+                        <span class="tag btc">Hardened Derivations</span>
+                        <span class="tag btc">zpub / xpub Analysis</span>
+                        <span class="tag btc">UTXO Management</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📱</div>
+                        <h3>Air-Gapped & Cold Storage</h3>
+                    </div>
+                    <p>
+                        Progettazione e implementazione di architetture di firma offline isolati da rete. Sviluppo di metodologie hardware/software resilienti per la mitigazione di single points of failure nella custodia.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag btc">Cold Storage</span>
+                        <span class="tag btc">Air-Gapped Devices</span>
+                        <span class="tag btc">QR Communication</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ESPERIENZA PROFESSIONALE -->
+        <!-- ESPERIENZA E PERCORSO PROFESSIONALE -->
         <section id="esperienza">
             <h2 class="section-title">Esperienza e Percorso Professionale</h2>
             <div class="timeline">
                 
+                <!-- RRROBOTICA -->
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <div>
-                            <div class="company">RRRobotica S.r.l.</div>
-                            <div class="role-title">Service & Spare Parts Manager | Technical Service Solutions | RLS Aziendale</div>
-                        </div>
+                        <div class="company">RRRobotica S.r.l.</div>
+                        <div class="role-title">Service & Spare Parts Manager | Technical Service Solutions | RLS Aziendale</div>
                     </div>
                     <ul class="timeline-list">
-                        <li><strong>Automazione e Robotica:</strong> Gestione e coordinamento di interventi di installazione, collaudo e assistenza post-vendita su impianti e isole robotizzate.</li>
-                        <li><strong>Spare Parts Area Management:</strong> Gestione completa dell'area pezzi di ricambio, ottimizzazione delle scorte e soluzioni tecniche di service.</li>
-                        <li><strong>Coordinamento Logistico:</strong> Organizzazione operativa delle spedizioni, gestione dei materiali e pianificazione delle attività tecniche sul campo.</li>
-                        <li><strong>Contabilità di Reparto:</strong> Elaborazione e gestione contabile del reparto Service e Ricambi, predisposizione e verifica dei DDT destinati al reparto amministrativo per la fatturazione.</li>
-                        <li><strong>RLS Aziendale (10+ Anni):</strong> Copertura continuativa del ruolo di Rappresentante dei Lavoratori per la Sicurezza. Creazione, digitalizzazione, gestione e archiviazione continuativa dei documenti aziendali (DVR, registri dei rischi, corsi e certificazioni).</li>
+                        <li><strong>Automazione e Robotica:</strong> Coordinamento operativo e gestione tecnica degli interventi di installazione, collaudo e assistenza post-vendita su isole robotizzate e impianti industriali.</li>
+                        <li><strong>Spare Parts Area Management:</strong> Gestione strategica e operativa dell'area ricambi, ottimizzazione del magazzino e supporto tecnico continuo alla clientela.</li>
+                        <li><strong>Coordinamento Logistico & Contabilità:</strong> Pianificazione logistica delle spedizioni e gestione contabile del reparto Service & Ricambi con emissione diretta dei DDT integrati con l'amministrazione.</li>
+                        <li><strong>RLS & Digitalizzazione Sicurezza (10+ Anni):</strong> Copertura decennale del ruolo di RLS. Creazione, digitalizzazione e gestione continuativa dell'archivio dei documenti di sicurezza aziendali (DVR, registri dei rischi, corsi e certificazioni).</li>
+                    </ul>
+                </div>
+
+                <!-- BITCOIN RESEARCH -->
+                <div class="timeline-item btc-border">
+                    <div class="timeline-header">
+                        <div class="company btc">Bitcoin Protocol Researcher & Technical Writer</div>
+                        <div class="role-title">Ricerca Indipendente & Pubblicazioni Tecniche</div>
+                    </div>
+                    <ul class="timeline-list">
+                        <li><strong>Architettura del Protocollo & Crittografia:</strong> Analisi approfondita dei processi di generazione dell'entropia, funzioni d'hash (SHA-256, RIPEMD-160) e matematica delle curve ellittiche (secp256k1).</li>
+                        <li><strong>Derivazioni Gerarchiche & Key Management:</strong> Studio strutturato degli standard BIP32/BIP39/BIP44, con focus critico sulla differenza tra percorsi di derivazione <em>hardened</em> e <em>non-hardened</em> e mitigazione delle vulnerabilità zpub/xpub.</li>
+                        <li><strong>UTXO & Fee Market Optimization:</strong> Ricerca su strategie avanzate di gestione degli UTXO, analisi del mempool, fee market e tecniche di consolidamento per la self-custody.</li>
+                        <li><strong>Air-Gapped Hardware Architectures:</strong> Progettazione di dispositivi di firma offline e test di resilienza su hardware dedicato per la sicurezza della self-custody.</li>
                     </ul>
                 </div>
 
@@ -465,37 +643,83 @@
             <h2 class="section-title">Progetti Selezionati</h2>
             <div class="grid-2">
                 
-                <!-- ZENITH 1.1 -->
+                <!-- MERIDIAN -->
                 <div class="card">
-                    <h3>Zenith 1.1 – Personal Finance & Multi-Account Accounting System</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📊</div>
+                        <h3>Meridian – Automated Portfolio & Wealth Management System</h3>
+                    </div>
                     <p>
-                        Modello contabile avanzato su foglio di calcolo per il monitoraggio integrato dei flussi di cassa, del patrimonio netto (Net Worth) e della gestione multi-conto in regime amministrato e privato.
+                        Ecosistema automatizzato per il monitoraggio e l'asset allocation di un portafoglio investimenti multi-asset, che integra fogli di calcolo avanzati con script Python e dashboard web.
                     </p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; padding-left: 1rem;">
-                        <li><strong>Architettura a 6 Vettori Logici:</strong> Tracciamento tramite <em>Income, Outflow, Investment, Self Transfer, Transit, Info</em> per isolare le uscite reali e gestire in modo neutrale rimborsi e partite di giro.</li>
-                        <li><strong>Balance Control Table:</strong> Sistema di riconciliazione automatica per il riscontro in tempo reale tra saldi calcolati ed estratti conto bancari.</li>
-                        <li><strong>Reporting Finanziario:</strong> Modulo di analisi basato su formule condizionali complesse (<code>SOMMA.PIÙ.SE</code>) per il calcolo automatizzato di Gross e Net Outflow, privo di distorsioni da movimenti interni.</li>
+                    <ul style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; padding-left: 1.2rem; line-height: 1.5;">
+                        <li><strong>Data Pipeline & API:</strong> Script Python (<code>yfinance</code>, <code>openpyxl</code>) per l'estrazione automatizzata dei prezzi di mercato e aggiornamento programmatico dei database locali.</li>
+                        <li><strong>Architettura Finanziaria:</strong> Registro relazionale (Securities Ledger, Trade Timeline) per la netta separazione contabile tra Total Cost, Realized P/L e flussi di cassa.</li>
+                        <li><strong>Web Dashboard & Multi-Owner:</strong> Interfaccia HTML/CSS/JS per la consultazione rapida del Net Worth e consolidamento aggregato dell'asset allocation a livello familiare.</li>
                     </ul>
                     <div class="card-tags">
-                        <span class="tag">LibreOffice Calc</span>
-                        <span class="tag">Financial Architecture</span>
-                        <span class="tag">Multi-Account Engine</span>
+                        <span class="tag green">Python (yfinance/openpyxl)</span>
+                        <span class="tag green">Web Dashboard</span>
+                        <span class="tag green">Multi-Asset Engine</span>
                     </div>
                 </div>
 
-                <!-- SUBSTACK MORDOM -->
+                <!-- ZENITH 1.1 -->
                 <div class="card">
-                    <h3>Mordom Substack – Bitcoin Technical Research</h3>
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📑</div>
+                        <h3>Zenith 1.1 – Personal Finance Accounting System</h3>
+                    </div>
                     <p>
-                        Canale di pubblicazione e analisi tecnica dedicato all'architettura del protocollo Bitcoin. Focus su privacy, derivazione chiavi e gestione avanzata delle transazioni.
+                        Modello contabile avanzato su foglio di calcolo per il monitoraggio integrato dei flussi di cassa familiari, patrimonio netto (Net Worth) e gestione multi-conto.
                     </p>
-                    <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; padding-left: 1rem;">
-                        <li>Analisi dei rischi di sicurezza nelle derivazioni zpub/xpub.</li>
-                        <li>Studio sulle strategie di consolidamento UTXO e fee market.</li>
-                        <li>Ingegnerizzazione ed estrazione dati via Python su endpoint blockchain pubblici.</li>
+                    <ul style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; padding-left: 1.2rem; line-height: 1.5;">
+                        <li><strong>Architettura a 6 Vettori Logici:</strong> Tracciamento tramite <em>Income, Outflow, Investment, Self Transfer, Transit, Info</em> per isolare le uscite reali e gestire rimborsi e transiti.</li>
+                        <li><strong>Balance Control Table:</strong> Riconciliazione automatica in tempo reale con i saldi reali degli estratti conto bancari.</li>
+                        <li><strong>Financial Reporting:</strong> Dashboard basata su formule condizionali (<code>SOMMA.PIÙ.SE</code>) per il calcolo automatizzato di Gross e Net Outflow.</li>
                     </ul>
-                    <div style="margin-top: auto;">
-                        <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Leggi gli articoli su Substack ↗</a>
+                    <div class="card-tags">
+                        <span class="tag green">LibreOffice Calc</span>
+                        <span class="tag green">Multi-Account Engine</span>
+                        <span class="tag green">Accounting Architecture</span>
+                    </div>
+                </div>
+
+                <!-- COLDMOBILE -->
+                <div class="card">
+                    <div class="card-header-icon">
+                        <div class="icon-badge">📱</div>
+                        <h3>ColdMobile – Dispositivo di Firma Offline Air-Gapped</h3>
+                    </div>
+                    <p>
+                        Guida tecnica e architettura per trasformare uno smartphone dismesso in un dispositivo di firma affidabile, completamente isolato da qualsiasi rete.
+                    </p>
+                    <ul style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; padding-left: 1.2rem; line-height: 1.5;">
+                        <li>Isolamento hardware e software totale da connessioni internet/wireless.</li>
+                        <li>Comunicazione bidirezionale basata esclusivamente sul passaggio di codici QR.</li>
+                        <li>Focus su self-custody resiliente, riduzione della fiducia ed eliminazione di single points of failure.</li>
+                    </ul>
+                    <div style="margin-top: auto; padding-top: 1rem;">
+                        <a href="https://mordom.substack.com/p/coldmobile-la-guida-definitiva-per" target="_blank" class="btn btn-btc">Leggi la Guida Tecnica ↗</a>
+                    </div>
+                </div>
+
+                <!-- SUBSTACK & BITVAULT -->
+                <div class="card">
+                    <div class="card-header-icon">
+                        <div class="icon-badge">₿</div>
+                        <h3>Mordom Substack & Bitvault.sv – Technical Publications</h3>
+                    </div>
+                    <p>
+                        Pubblicazione di articoli tecnici e analisi architetturali scritti per developer e ricercatori di sicurezza sul protocollo Bitcoin.
+                    </p>
+                    <ul style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; padding-left: 1.2rem; line-height: 1.5;">
+                        <li>Articoli tecnici pubblicati su Substack e Bitvault.sv.</li>
+                        <li>Focus prioritario su self-custody, privacy e protocol hardening.</li>
+                        <li>Integrazione RSS nativa per una consultazione totalmente indipendente.</li>
+                    </ul>
+                    <div style="margin-top: auto; padding-top: 1rem;">
+                        <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Esplora Substack ↗</a>
                     </div>
                 </div>
 
@@ -504,13 +728,14 @@
 
         <!-- CONTATTI -->
         <section id="contatti">
-            <h2 class="section-title">Contatti & Link</h2>
-            <div class="card">
-                <p>Per informazioni, collaborazioni tecniche o consultazione dei progetti:</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                    <a href="https://github.com/mordom3" target="_blank" class="btn">GitHub Profile</a>
-                    <a href="https://www.linkedin.com/in/mordom3" target="_blank" class="btn">LinkedIn Profile</a>
-                    <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Substack Newsletter</a>
+            <h2 class="section-title">Contatti & Collegamenti</h2>
+            <div class="card" style="background: linear-gradient(135deg, #111827 0%, #1a2333 100%); border-color: rgba(16, 185, 129, 0.3);">
+                <h3>Vuoi conoscere meglio il mio percorso o approfondire un progetto?</h3>
+                <p style="margin-top: 0.5rem;">Puoi consultare le mie repository pubbliche, il profilo professionale o i miei articoli tecnici:</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="https://github.com/mordom3" target="_blank" class="btn">GitHub Profile ↗</a>
+                    <a href="https://www.linkedin.com/in/mordom3" target="_blank" class="btn">LinkedIn Profile ↗</a>
+                    <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Substack Newsletter ↗</a>
                 </div>
             </div>
         </section>
@@ -518,7 +743,7 @@
     </main>
 
     <footer>
-        <p>© Domenico Morelli — GitHub Pages Hosting (`mordom3.github.io`)</p>
+        <p>© Domenico Morelli — GitHub Pages (`mordom3.github.io`)</p>
     </footer>
 
 </body>
