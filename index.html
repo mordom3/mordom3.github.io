@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="it">
 
@@ -387,6 +387,7 @@
         section {
 
             margin-top: 4.5rem;
+            scroll-margin-top: 6rem;
 
         }
 
@@ -814,6 +815,13 @@
 
         }
 
+        @media (max-width: 600px) {
+            nav { flex-wrap: wrap; gap: 0.75rem; }
+            nav ul { flex-wrap: wrap; gap: 0.5rem 1rem; }
+            .container { padding: 1rem; }
+            .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); }
+            .card > div[style] { flex-wrap: wrap; gap: 0.75rem; }
+        }
     </style>
 
 </head>
@@ -861,7 +869,7 @@
 
                 <p class="description">
 
-                    Unisco oltre un decennio di esperienza operativa nell'automazione e robotica industriale (Service, Spare Parts e RLS) con l'ingegnerizzazione di modelli di calcolo finanziari e la ricerca tecnica avanzata sul protocollo Bitcoin.
+                    Unisco oltre 20 anni di esperienza operativa nell'automazione e robotica industriale (Service, Spare Parts e RLS) con l'ingegnerizzazione di modelli di calcolo finanziari e la ricerca tecnica avanzata sul protocollo Bitcoin.
 
                 </p>
 
@@ -869,9 +877,9 @@
 
                     <a href="#progetti" class="btn">Scopri i Progetti ➔</a>
 
-                    <a href="https://github.com/mordom3" target="_blank" class="btn">GitHub Repos ↗</a>
+                    <a href="https://github.com/mordom3" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repos ↗</a>
 
-                    <a href="https://mordom.substack.com/" target="_blank" class="btn btn-btc">Substack Research ↗</a>
+                    <a href="https://mordom.substack.com/" target="_blank" rel="noopener noreferrer" class="btn btn-btc">Substack Research ↗</a>
 
                 </div>
 
@@ -982,6 +990,8 @@
                         <span class="tag blue">Post-Vendita</span>
 
                         <span class="tag blue">Collaudo Impianti</span>
+
+                        <span class="tag blue">20+ anni</span>
 
                     </div>
 
@@ -1118,7 +1128,7 @@
 
                     <p>
 
-                        Progettazione e implementazione di architetture di firma offline isolati da rete. Sviluppo di metodologie hardware/software resilienti per la mitigazione di single points of failure nella custodia.
+                        Progettazione e implementazione di architetture di firma offline isolate dalla rete. Sviluppo di metodologie hardware/software resilienti per la mitigazione di single points of failure nella custodia.
 
                     </p>
 
@@ -1170,7 +1180,7 @@
 
                         <li><strong>Coordinamento Logistico & Contabilità:</strong> Pianificazione logistica delle spedizioni e gestione contabile del reparto Service & Ricambi con emissione diretta dei DDT integrati con l'amministrazione.</li>
 
-                        <li><strong>RLS & Digitalizzazione Sicurezza (20+ Anni):</strong> Copertura decennale del ruolo di RLS. Creazione, digitalizzazione e gestione continuativa dell'archivio dei documenti di sicurezza aziendali (DVR, registri dei rischi, corsi e certificazioni).</li>
+                        <li><strong>RLS & Digitalizzazione Sicurezza (20+ Anni):</strong> Oltre 20 anni nel ruolo di RLS. Creazione, digitalizzazione e gestione continuativa dell'archivio dei documenti di sicurezza aziendali (DVR, registri dei rischi, corsi e certificazioni).</li>
 
                     </ul>
 
@@ -1239,11 +1249,11 @@
 
                     <ul style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; padding-left: 1.2rem; line-height: 1.5;">
 
-                        <li><strong>Architettura Finanziaria & Contabile:</strong> Modellazione relazionale (Securities Ledger, Trade Timeline, Cash Flows) per il tracciamento granulare del capitale e netta separazione tra Total Cost, Realized P/L e flussi di cassa.</li>
+                        <li><strong>Architettura Finanziaria & Contabile:</strong> Ledger, cronologia operazioni e flussi di cassa per distinguere capitale investito, costi e risultati realizzati.</li>
 
                         <li><strong>Asset Allocation & Target:</strong> Monitoraggio dinamico degli scostamenti dai target di allocazione e calcolo automatico delle metriche di performance.</li>
 
-                        <li><strong>Consolidamento Multi-Owner:</strong> Infrastruttura logica per aggregare l'asset allocation a livello di nucleo familiare, calcolando quote di proprietà e performance dei singoli membri.</li>
+                        <li><strong>Consolidamento Multi-Owner:</strong> Aggregazione del portafoglio familiare con quote di proprietà e performance per ciascun membro.</li>
 
                     </ul>
 
@@ -1274,7 +1284,7 @@
 
                     <p>
 
-                        Engine in Python sviluppato per interfacciare fogli di calcolo finanziari (come Meridian) con flussi dati di mercato in tempo reale ed esportazione web.
+                        Motore Python per aggiornare i prezzi nei fogli finanziari, come Meridian, e generare una dashboard web.
 
                     </p>
 
@@ -1284,7 +1294,7 @@
 
                         <li><strong>Excel Automation:</strong> Scrittura programmatica e aggiornamento automatico delle celle di Meridian tramite la libreria <code>openpyxl</code>.</li>
 
-                        <li><strong>Dashboard HTML Standalone:</strong> Generazione dinamica di una dashboard web (HTML/CSS/JS) interattiva con grafici di performance ed esportazione snapshot CSV.</li>
+                        <li><strong>Dashboard HTML Standalone:</strong> Dashboard interattiva HTML/CSS/JS con grafici di performance ed esportazione CSV.</li>
 
                     </ul>
 
@@ -1298,7 +1308,7 @@
 
                         </div>
 
-                        <a href="https://github.com/mordom3/python-xls-price-loader" target="_blank" class="btn">GitHub Repo ↗</a>
+                        <a href="https://github.com/mordom3/python-xls-price-loader" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo ↗</a>
 
                     </div>
 
@@ -1345,7 +1355,7 @@
 
                         </div>
 
-                        <a href="https://github.com/mordom3/bitcoin-mnemonic-tx-checker" target="_blank" class="btn btn-btc">GitHub Repo ↗</a>
+                        <a href="https://github.com/mordom3/bitcoin-mnemonic-tx-checker" target="_blank" rel="noopener noreferrer" class="btn btn-btc">GitHub Repo ↗</a>
 
                     </div>
 
@@ -1392,7 +1402,7 @@
 
                         </div>
 
-                        <a href="https://github.com/mordom3/bip32-extpriv-recovery" target="_blank" class="btn btn-btc">GitHub Repo ↗</a>
+                        <a href="https://github.com/mordom3/bip32-extpriv-recovery" target="_blank" rel="noopener noreferrer" class="btn btn-btc">GitHub Repo ↗</a>
 
                     </div>
 
@@ -1413,7 +1423,7 @@
 
                     <p>
 
-                        Modello contabile avanzato su foglio di calcolo per il monitoraggio integrato dei flussi di cassa familiari, patrimonio netto (Net Worth) e gestione multi-conto.
+                        Foglio di calcolo per monitorare flussi di cassa familiari, patrimonio netto e saldi di più conti.
 
                     </p>
 
@@ -1428,3 +1438,23 @@
                     </ul>
 
                     <div class="card-tags"> 
+                        <span class="tag green">Excel / LibreOffice Calc</span>
+                        <span class="tag green">Cash Flow</span>
+                        <span class="tag green">Net Worth</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <h2 class="section-title">Contatti</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Scopri il mio codice su GitHub e le mie pubblicazioni su Substack.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://github.com/mordom3" target="_blank" rel="noopener noreferrer" class="btn">GitHub ↗</a>
+                <a href="https://mordom.substack.com/" target="_blank" rel="noopener noreferrer" class="btn btn-btc">Substack ↗</a>
+            </div>
+        </section>
+        <footer>Domenico Morelli · Technical Service, Data Systems &amp; Bitcoin Research</footer>
+    </main>
+</body>
+</html>
